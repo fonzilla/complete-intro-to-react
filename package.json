@@ -6,9 +6,13 @@
   "author": "Brian Holt <btholt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "standard",
+    "lint": "eslint js/**/*.js webpack.config.js",
     "build": "webpack",
-    "watch": "npm run build -- --watch"
+    "dev": "webpack-dev-server",
+    "watch": "npm run build -- --watch",
+    "test": "NODE_ENV=test jest",
+    "update-test": "npm run test -- -u",
+    "cover": "npm run test -- --coverage"
   },
   "dependencies": {
     "axios": "^0.15.3",
